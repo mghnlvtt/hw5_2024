@@ -1,0 +1,25 @@
+/* 
+Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1. */
+body {
+    font-family: "Poppins", serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+  }
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_links{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.nav_item a:link, .nav_item a:visited, .nav_item a:hover, .nav_item a:active, .nav_item a:focus{
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+}
