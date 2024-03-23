@@ -1,4 +1,7 @@
 /* 
+
+
+COME BACK AND ADD KEYFRAMES
 Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1. */
 body {
     font-family: "Poppins", serif;
@@ -18,8 +21,30 @@ header{
     
 }
 
-.nav_item a:link, .nav_item a:visited, .nav_item a:hover, .nav_item a:active, .nav_item a:focus{
+.nav_links a:link, .nav_links a:visited, .nav_links a:hover, .nav_links a:active, .nav_links a:focus{
     color: blue;
     background-color: transparent;
     text-decoration: underline;
 }
+.card > header{
+    background: #288088;
+    border:  2px solid #45ADAD;
+    padding: 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+.card{
+    flex-basis: 450px;
+    border-radius: 50px 50px 0px 0px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+div{display: flex;}
+
+/* pricing{
+    display: flex;
+    align-content: center;
+} */
