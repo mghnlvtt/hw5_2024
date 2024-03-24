@@ -184,6 +184,7 @@ rounded borders, and a new solid border with color*/
 header) are not meant to be visible*/
     .gallery, #gallery{
         visibility: hidden;
+        display: none;
     }
 
 /*Selecting the second child of a list within the card class to add
