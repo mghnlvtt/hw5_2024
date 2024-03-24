@@ -1,26 +1,30 @@
-/* 
-
-
-COME BACK AND ADD KEYFRAMES
-Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1. */
-
-img#logo{
-    animation: logo 5s;
-}
-
+/*Setting keyframes for the logo animation. 
+Starting with a width of 25px and an opacity of 0, 
+ending with a width of 475px and an opacity of 1 (fully visible)*/
 @keyframes logo {
     from {width:25px;
         opacity: 0;}
     to {width:475px;
         opacity: 1;}
-  }
+}
 
+/*Using the 'logo' id to assign the animation to the logo image, 
+which will take 5 seconds to complete upon page load*/
+img#logo{
+    animation: logo 5s;
+}
+
+/*Editing the body element to use the font Poppins from Google,
+adding the concrete background image, and the background color*/
 body {
     font-family: "Poppins", serif;
     background-image: url("../images/concrete_seamless.png");
     background-color: #f1f1f1;
-  }
+}
 
+/*Editing the header element to use flex,
+making the flex into a column with center alignment and no wrap
+so the logo & navigation children are stacked atop each other*/
 header{
     display: flex;
     flex-direction: column;
@@ -28,101 +32,156 @@ header{
     flex-wrap: nowrap;
 }
 
+/*Editing the nav_links class to also use flex,
+using column to stack them and nowrap so they stay in a single column*/
 .nav_links{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
 }
 
-.nav_links a:link, .nav_links a:visited, .nav_links a:hover, .nav_links a:active, .nav_links a:focus{
+/*Using link selectors for links within the nav_links class
+to make sure that no matter the state the links are in, 
+they stay the same color and keep the same decoration*/
+.nav_links a:link, .nav_links a:visited, .nav_links a:hover, 
+.nav_links a:active, .nav_links a:focus{
     color: blue;
     background-color: transparent;
     text-decoration: underline;
 }
+
+/*Editing header element within card class to change
+the background, border, add top/bottom badding, and 
+round the upper left and right corners*/
 .card > header{
     background: #288088;
     border:  2px solid #45ADAD;
     padding: 20px 0px;
     border-radius: 50px 50px 0px 0px;
 }
+
+/*Adding a flex-basis of 450px to change width of the cards
+and using the same border radius from above to round the corners 
+behind the header*/
 .card{
     flex-basis: 450px;
     border-radius: 50px 50px 0px 0px;
 }
 
+/*Editing the pricing card to add flex, center aligning the content, 
+using flex-direction for a row layout, using wrap so the cards stack
+atop each other, and center justifying the content so it sits in the 
+middle of the page*/
 .pricing{
     display: flex;
     align-content: center;
     flex-direction: row;
-    align-items: stretch;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+/*Selecting the img elements that are a child of the gallery class, 
+setting the border with color, width, and style specified +
+specifying margin and width for the images*/
 .gallery>img{
     border:  10px solid #50C7C7;
     margin: 10px;
     width: 300px;
 }
 
+/*Editing the gallery class to use flex, wrap for the images to sit
+next to each other, center justifying the class so the flexbox is  
+in the center of the page*/
 .gallery{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+/*Adding the media query for a minimum width of 900px to begin
+to edit the wider screen view*/
 @media screen and (min-width:900px){
+
+/*Editing the header element to go in a row direction with 
+spacing to spread the logo and the nav_links across the top of the page, 
+specifying a sticky position at 0 from the top for a sticky header when
+scrolling*/
     header{
         flex-direction: row;
         justify-content: space-between;
         position: sticky;
         top: 0;
     }
+
+/*Editing the nav_links class to sit in a row instead of a column*/
     .nav_links{
         flex-direction: row;
     }
+
+/*Editing the .card class for the cards to have a width of 275px and
+the same border specifications to keep them rounded*/
     .card{
         flex-basis: 275px;
         border-radius: 50px 50px 0px 0px;
     }
+
+/*Editing the pricing for the items to be center aligned*/
     .pricing{
-        flex-direction: row;
-        flex-wrap: nowrap;
         align-items: center;
-        justify-content: center;
     }
 }
-@media (prefers-reduced-motion: reduce) {
+
+/*Adding a prefers-reduced-motion media query, which will disable
+the animation if the user specifies a preference for reduced motion*/
+@media (prefers-reduced-motion: reduce){
     img#logo{
       animation: none;
     }
-  }
+}
 
+/*Adding a media query for the site's print formatting*/
 @media print{ 
+
+/*Editing the body element to use Arial (with Helvetica as a backup),
+removing the background image, keeping the background color*/
     body {
         font-family: Arial, Helvetica, sans-serif;
         background-image: none;
         background-color: #f1f1f1;
     }
+
+/*Editing both the nav element and the nav_links class sit in a row,
+spacing around the content and specifying a width of 100% so the 
+children can be spread out as specified*/
     nav, .nav_links{
-        display: flex;
         flex-direction: row;
         justify-content: space-around;
         width: 100%;
     }
+
+/*Editing the pricing class to align items along the bottom, 
+and specifying nowrap so they'll sit next to each other*/
     .pricing{
-        flex-direction: row;
         align-items: flex-end;
         flex-wrap: nowrap;
     }
+
+/*Editing the card class to have a flex-basis width of 325px, the same
+rounded borders, and a new solid border with color*/
     .card{
         flex-basis: 325px;
         border-radius: 50px 50px 0px 0px;
         border:  2px solid #45ADDD;
     }
+
+/*Specifying that both the gallery class and the gallery id (for the 
+header) are not meant to be visible*/
     .gallery, #gallery{
         visibility: hidden;
     }
+
+/*Selecting the second child of a list within the card class to add
+content after it (the specified thumbs up emoji)*/
     .card li:nth-child(2)::after{
         content: '👍';
     }
