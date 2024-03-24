@@ -125,6 +125,12 @@ the same border specifications to keep them rounded*/
         border-radius: 50px 50px 0px 0px;
     }
 
+/*Adding a static position to the headers within the card class
+so they won't overlap the main header when scrolling*/
+    .card header{
+        position:static;
+    }
+
 /*Editing the pricing for the items to be center aligned*/
     .pricing{
         align-items: center;
