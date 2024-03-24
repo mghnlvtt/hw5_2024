@@ -45,3 +45,15 @@ header{
     align-items: stretch;
     flex-wrap: wrap;
 }
+
+.gallery>img{
+    border:  10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
